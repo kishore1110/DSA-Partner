@@ -1,0 +1,70 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Form group */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Form label */
+  .form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(2, 8, 23);
+  }
+  
+  /* Form input and select */
+  .form-input,
+  .form-select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(2, 8, 23);
+  }
+  
+  /* Form actions container */
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  
+  /* Cancel button */
+  .cancel-button {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: rgb(2, 8, 23);
+  }
+  
+  .cancel-button:hover {
+    background-color: #f1f5f9;
+  }
+  
+  /* Submit button */
+  .submit-button {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    background-color: rgb(135, 106, 251);;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .submit-button:hover {
+    background-color: rgba(59, 130, 246, 0.9);
+  }

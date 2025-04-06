@@ -1,0 +1,223 @@
+.problem-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: rgb(2, 8, 23);
+  }
+  
+  /* Empty state container */
+  .empty-state {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .empty-state-icon {
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+  }
+  
+  .empty-state-text {
+    color: #6c757d;
+  }
+  
+  .empty-state-subtext {
+    color: rgb(94 94 94);
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Section title */
+  .section-title {
+    font-weight: 500;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Problem card */
+  .problem-card {
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    border: 1px solid rgb(229, 231, 235);
+    background-color: #fff;
+    transition: background-color 0.2s;
+    margin-top: 8px;
+  }
+  
+  .problem-card:hover {
+    background-color: rgba(236, 240, 243, 0.1);
+  }
+  
+  .problem-card.fade-out {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .missed-problem-overload {
+    background-color: rgb(254, 242, 242);
+    border: 1px solid rgb(254, 202, 202);
+  }
+  /* Problem header */
+  .problem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .problem-title {
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    max-width: 100%;
+    transition: color 0.2s;
+    color: black
+  }
+  
+  .problem-title:hover {
+    color: rgb(135, 106, 251);
+    transform: scale(1.05);
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .problem-title:visited {
+    color: "";
+  }
+  
+  /* Badge */
+  .problem-badge {
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #e2e8f0;
+    background-color: white;
+  }
+  
+  /* Date info */
+  .problem-date {
+    font-size: 0.75rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Problem footer */
+  .problem-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  
+  .review-date {
+    font-size: 0.75rem;
+    color: #6c757d;
+  }
+  
+  .mark-reviewed-button {
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #3b82f6;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+  }
+  
+  .mark-reviewed-button:hover {
+    color: rgba(59, 130, 246, 0.8);
+  }
+  
+  .check-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .mb-3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .mt-16px {
+    margin-top: 16px;
+  }
+
+  .no-today-problems {
+    text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px dashed rgb(226, 232, 240);
+  border-radius: 0.375rem;
+  color: rgb(100, 116, 139);
+  }
+
+  .date-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .date-group {
+    margin-top: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 8px;
+  }
+
+  .date-wise-problems {
+    margin-top: 8px;
+  }
+
+  .problem-badge {
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #e2e8f0;
+    color: rgb(40, 40, 40);
+  }
+
+  .mark-solved-btn {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 5px; /* Add some padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 11px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .mark-solved-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+
+  .critical-color {
+    color: rgb(185, 28, 28);
+  }
+
+  .flex-4 {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .flex-8 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mt-8px {
+    margin-top: 8px;
+  }
+
+  .bg-indigo {
+    background-color: indigo;
+  }
+
+  .bg-indigo:hover {
+    background-color: rgb(59, 1, 100);
+  }

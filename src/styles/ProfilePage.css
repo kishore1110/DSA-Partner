@@ -1,0 +1,215 @@
+/* General container styles */
+.profile-container {
+    padding: 20px;
+    background-color: #f9fafb;
+  }
+  
+  .profile-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  /* Section styles */
+  .about-me-section,
+  .support-section,
+  .feedback-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+  }
+  
+  .section-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .user-icon {
+    background-color: #7c3aed;
+  }
+  
+  .coffee-icon {
+    background-color: #ffdd00;
+  }
+  
+  .feedback-icon {
+    background-color: #7c3aed;
+  }
+  
+  /* About Me Section */
+  .about-me-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(124, 58, 237, 0.2);
+  }
+  
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .avatar-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    background-color: #7c3aed;
+    color: #ffffff;
+  }
+  
+  .about-me-text {
+    flex: 1;
+  }
+  
+  .profile-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  .profile-role {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .profile-description {
+    font-size: 14px;
+    color: #555555;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .social-link {
+    font-size: 14px;
+    color: #7c3aed;
+    text-decoration: none;
+  }
+  
+  .social-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Support Section */
+  .support-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .support-description {
+    font-size: 14px;
+    color: #555555;
+  }
+  
+  .support-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .support-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .coffee-button {
+    background-color: #ffdd00;
+    color: #000000;
+  }
+  
+  .sponsor-button {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #dddddd;
+  }
+  
+  /* Feedback Section */
+  .feedback-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .feedback-description {
+    font-size: 14px;
+    color: #555555;
+  }
+  
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .form-label {
+    font-size: 14px;
+    color: #333333;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .form-textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .submit-feedback-button {
+    padding: 10px 16px;
+    background-color: #7c3aed;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-feedback-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+  .social-link {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+  }
