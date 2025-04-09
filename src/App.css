@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  width: 385px;
+  max-height: 400px;
+  padding: 16px;
+  transition: background-color 0.2s ease-in-out;
+}
+

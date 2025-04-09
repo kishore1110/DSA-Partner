@@ -78,7 +78,7 @@
   
   .panel-content {
     padding: 16px;
-    height: 288px;
+    max-height: 285px;
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;

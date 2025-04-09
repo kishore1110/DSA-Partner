@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "CRXJS React Vite Example",
+    "name": "DSA Memoizer",
     "version": "1.0.0",
     "action": { "default_popup": "index.html" },
     "content_scripts": [
@@ -9,6 +9,11 @@
       "matches": ["https://www.geeksforgeeks.org/problems/*", "https://leetcode.com/problems/*"]
     }
   ],
+  "icons": {
+    "16": "brain_icon.png",
+    "48": "brain_icon.png",
+    "128": "brain_icon.png"
+  },
   "permissions": ["storage"],
   "web_accessible_resources": [
   {

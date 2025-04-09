@@ -1,4 +1,3 @@
-/* General container styles */
 .profile-container {
     padding: 20px;
     background-color: #f9fafb;
@@ -10,14 +9,13 @@
     gap: 24px;
   }
   
-  /* Section styles */
   .about-me-section,
   .support-section,
   .feedback-section {
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
   }
   
   .section-header {
@@ -27,10 +25,10 @@
     margin-bottom: 16px;
   }
   
-  .section-title {
-    font-size: 18px;
+  .profile-section-title {
+    font-size: 15px;
     font-weight: 600;
-    color: #333333;
+    color: #333333 !important;
   }
   
   .section-icon {
@@ -50,11 +48,11 @@
     background-color: #7c3aed;
   }
   
-  /* About Me Section */
   .about-me-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
+    align-items: center;
   }
   
   .avatar {
@@ -89,7 +87,8 @@
   .profile-name {
     font-size: 20px;
     font-weight: bold;
-    color: #333333;
+    color: #333333 !important;
+    margin-bottom: 8px !important;
   }
   
   .profile-role {
@@ -114,10 +113,10 @@
   }
   
   .social-link:hover {
-    text-decoration: underline;
+    transform: scale(1.01);
+    transition: transform 0.2s, color 0.2s;
   }
   
-  /* Support Section */
   .support-content {
     display: flex;
     flex-direction: column;
@@ -152,7 +151,6 @@
     border: 1px solid #dddddd;
   }
   
-  /* Feedback Section */
   .feedback-content {
     display: flex;
     flex-direction: column;
@@ -187,6 +185,7 @@
     border: 1px solid #dddddd;
     border-radius: 4px;
     font-size: 14px;
+    background-color: #fff !important;
   }
   
   .form-textarea {
@@ -212,4 +211,31 @@
     border: none;
     background-color: white;
     cursor: pointer;
+  }
+
+  .success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .font-size-15 {
+    font-size: 14px;
   }

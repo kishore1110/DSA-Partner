@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Clock, Check, CalendarDays, TriangleAlert, RefreshCcw, CircleCheckBig } from "lucide-react"; // assuming you're using lucide-react
-import { formatDistanceToNow, format } from "date-fns"; // assuming you're using date-fns
-import "../styles/ProblemList.css"; // Import the CSS file
+import {
+  Clock,
+  Check,
+  CalendarDays,
+  TriangleAlert,
+  RefreshCcw,
+  CircleCheckBig,
+} from "lucide-react";
+import { format } from "date-fns";
+import "../styles/ProblemList.css";
 import {
   deleteProblem,
   getAllProblems,
@@ -22,7 +29,7 @@ const ProblemList = () => {
         const dateKey = format(
           new Date(problem.nextReviewDate),
           "EEEE, MMMM d"
-        ); // Format date as "Sunday, April 6"
+        );
         if (!acc[dateKey]) {
           acc[dateKey] = [];
         }
@@ -31,7 +38,7 @@ const ProblemList = () => {
       }, {});
 
     setUpcomingProblems(groupedUpcomingProblems);
-  }
+  };
 
   useEffect(() => {
     const fetchProblems = async () => {
@@ -46,7 +53,7 @@ const ProblemList = () => {
         problems.filter((problem) => problem.nextReviewDate < now)
       );
     };
-  
+
     fetchProblems();
   }, []);
 
@@ -54,34 +61,34 @@ const ProblemList = () => {
     const problemElement = document.getElementById(`problem-${id}`);
     if (problemElement) {
       problemElement.classList.add("fade-out");
-      setTimeout(async() => {
+      setTimeout(async () => {
         setTodayProblems((prevProblems) =>
           prevProblems.filter((p) => p.id !== id)
         );
         setMissedProblems((prevProblems) =>
           prevProblems.filter((p) => p.id !== id)
-      );
-      await deleteProblem(id);
+        );
+        await deleteProblem(id);
       }, 500);
     }
   };
 
-  const resolveAgain = async(problem) => {
+  const resolveAgain = async (problem) => {
     const id = problem.id;
     const problemElement = document.getElementById(`problem-${id}`);
     if (problemElement) {
       problemElement.classList.add("fade-out");
-      setTimeout(async() => {
+      setTimeout(async () => {
         setTodayProblems((prevProblems) =>
           prevProblems.filter((p) => p.id !== id)
         );
         setMissedProblems((prevProblems) =>
           prevProblems.filter((p) => p.id !== id)
-      );
-      await handleRetryProblem(problem, updateUpcomingProblems)
+        );
+        await handleRetryProblem(problem, updateUpcomingProblems);
       }, 500);
     }
-  }
+  };
 
   if (allProblems.length === 0) {
     return (
@@ -121,17 +128,23 @@ const ProblemList = () => {
                   <span className="problem-badge">{problem.platform}</span>
                 </div>
                 <div className="flex-8 mt-8px">
-                <button
-                className="mark-solved-btn"
-                onClick={() => handleMarkAsSolved(problem.id)}
-              >
-                <div className="flex-4"><CircleCheckBig size={12}/> Mark as Solved</div>
-              </button>
-              <button
+                  <button
+                    className="mark-solved-btn"
+                    onClick={() => handleMarkAsSolved(problem.id)}
+                  >
+                    <div className="flex-4">
+                      <CircleCheckBig size={12} /> Mark as Solved
+                    </div>
+                  </button>
+                  <button
                     className="mark-solved-btn bg-indigo"
                     onClick={() => resolveAgain(problem)}
                   >
-                   <div className="flex-4"> <RefreshCcw size={12}/>Resolve Again	</div>
+                    <div className="flex-4">
+                      {" "}
+                      <RefreshCcw size={12} />
+                      Resolve Again{" "}
+                    </div>
                   </button>
                 </div>
               </div>
@@ -139,50 +152,55 @@ const ProblemList = () => {
           </div>
         )}
       </div>
-      {missedProblems?.length ? <div className="mt-16px">
-        <div className="section-title mb-3 critical-color flex-4"><TriangleAlert size={16}/>Missed Problems :</div>
-        <div>
-          {missedProblems.map((problem) => (
-            <div
-              key={problem.id}
-              className="problem-card missed-problem-overload"
-              id={`problem-${problem.id}`}
-            >
-              <div className="problem-header">
-                <a
-                  href={problem.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="problem-title"
-                >
-                  {problem.title}
-                </a>
-                <span className="problem-badge">{problem.platform}</span>
-              </div>
-              <div className="flex-8 mt-8px">
-              <button
-                className="mark-solved-btn"
-                onClick={() => handleMarkAsSolved(problem.id)}
+      {missedProblems?.length ? (
+        <div className="mt-16px">
+          <div className="section-title mb-3 critical-color flex-4">
+            <TriangleAlert size={16} color="#e51f1f" />
+            Missed Problems :
+          </div>
+          <div>
+            {missedProblems.map((problem) => (
+              <div
+                key={problem.id}
+                className="problem-card missed-problem-overload"
+                id={`problem-${problem.id}`}
               >
-                <div className="flex-4"><CircleCheckBig size={12}/> Mark as Solved</div>
-              </button>
-              <button
+                <div className="problem-header">
+                  <a
+                    href={problem.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="problem-title"
+                  >
+                    {problem.title}
+                  </a>
+                  <span className="problem-badge">{problem.platform}</span>
+                </div>
+                <div className="flex-8 mt-8px">
+                  <button
+                    className="mark-solved-btn"
+                    onClick={() => handleMarkAsSolved(problem.id)}
+                  >
+                    <div className="flex-4">
+                      <CircleCheckBig size={12} /> Mark as Solved
+                    </div>
+                  </button>
+                  <button
                     className="mark-solved-btn bg-indigo"
                     onClick={() => resolveAgain(problem)}
                   >
-                   <div className="flex-4"> <RefreshCcw size={12}/>Resolve Again	</div>
+                    <div className="flex-4">
+                      {" "}
+                      <RefreshCcw size={12} />
+                      Resolve Again{" "}
+                    </div>
                   </button>
-                  {/* <span className="due-date">
-                  Due Date: {format(
-          new Date(problem.nextReviewDate),
-          "EEEE, MMMM d"
-        )}
-                  </span> */}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div> : null}
+      ) : null}
       <div className="mt-16px">
         <div className="section-title mb-3">Upcoming Problems :</div>
         {Object.keys(upcomingProblems)?.length === 0 ? (

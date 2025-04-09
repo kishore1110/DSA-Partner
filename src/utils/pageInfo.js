@@ -6,7 +6,6 @@ export const getCurrentUrl = async () => {
             resolve(tabs[0]?.url || '');
           });
         } else {
-          // Fallback for development environment
           resolve(window.location.href);
         }
       } catch (error) {
@@ -14,13 +13,4 @@ export const getCurrentUrl = async () => {
         resolve('');
       }
     });
-  };
-  
-  // Check if the current page is a coding platform
-  export const isCodingPlatform = async () => {
-    const url = await getCurrentUrl();
-    return url.includes('leetcode.com') || 
-           url.includes('geeksforgeeks.org') ||
-           url.includes('hackerrank.com') ||
-           url.includes('codechef.com');
   };
