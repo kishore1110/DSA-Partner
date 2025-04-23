@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/ProfilePage.css";
 import { CircleCheckBig } from "lucide-react";
+import { getReviewInterval, updateReviseDays } from "../utils/problemStorage";
 
 const ProfilePage = () => {
   const [iconUrl, setIconUrl] = useState("");
@@ -10,6 +11,7 @@ const ProfilePage = () => {
     feedback: "",
   });
   const [status, setStatus] = useState("");
+  const [reviseDay, setReviseDay] = useState(4);
 
   useEffect(() => {
     setIconUrl(chrome.runtime.getURL("public/linkedin_icon.png"));
@@ -50,6 +52,25 @@ const ProfilePage = () => {
       setStatus("error");
     }
   };
+
+  const handleReviseDayChange = async (e) => {
+    const value = parseInt(e.target.value, 10);
+    if (isNaN(value) || value < 1 || value > 30) {
+      console.log('Invalid input: value must be a number between 1 and 30.');
+      return;
+    }
+    setReviseDay(value);
+    await updateReviseDays(value);
+  };
+
+  useEffect(() => {
+    const fetchReviewInterval = async () => {
+      const interval = await getReviewInterval();
+      setReviseDay(interval || 4);
+    };
+
+    fetchReviewInterval();
+  }, []);
 
   return (
     <div className="profile-sections">
@@ -95,7 +116,12 @@ const ProfilePage = () => {
                   )
                 }
               >
-                <img src={iconUrl} alt="Linkedin icon" width={24} height={24} />
+                <img
+                  src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kNS0xMF8xLnBuZw.png"
+                  alt="Linkedin icon"
+                  width={24}
+                  height={24}
+                />
               </button>
               <button
                 className="social-link"
@@ -114,7 +140,30 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
+      <div className="setting-section">
+        <div className="section-header">
+          <h2 className="profile-section-title">Settings</h2>
+        </div>
 
+        <div className="setting-content">
+          <div className="form-group">
+            <label htmlFor="reviseDay" className="form-label">
+              Revise After (Days)
+            </label>
+            <input
+              id="reviseDay"
+              name="reviseDay"
+              type="number"
+              className="form-input"
+              value={reviseDay}
+              onChange={handleReviseDayChange}
+              min="1"
+              max="30"
+              required
+            />
+          </div>
+        </div>
+      </div>
       {/* Feedback Section */}
       <div className="feedback-section">
         <div className="section-header">

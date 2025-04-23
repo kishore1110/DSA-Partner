@@ -8,7 +8,7 @@ import ProfilePage from "./ProfilePage";
 const FloatingButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [view, setView] = useState("problems");
-
+  const isLeetcode = window.location.href.includes("leetcode.com");
   const toggleOpen = () => {
     setIsOpen(!isOpen);
     setView("problems");
@@ -53,7 +53,9 @@ const FloatingButton = () => {
             </div>
           </div>
 
-          <div className="panel-content">
+          <div className="panel-content" style={{
+            maxHeight: isLeetcode ? "53vh" : "285px"
+          }}>
             {view === "problems" ? (
               <ProblemList />
             ) : view === "add" ? (

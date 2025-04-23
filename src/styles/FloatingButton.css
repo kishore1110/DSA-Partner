@@ -48,7 +48,7 @@
     align-items: center;
 
     h3 {
-      color: rgb(2, 8, 23);
+      color: rgb(2, 8, 23) !important;
       margin: 0;
       font-size: 18px;
       font-weight: 600;

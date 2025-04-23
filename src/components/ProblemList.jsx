@@ -23,6 +23,7 @@ const ProblemList = () => {
   const [missedProblems, setMissedProblems] = useState([]);
 
   const updateUpcomingProblems = (problems, now) => {
+    problems = problems.sort((a, b) => a.nextReviewDate - b.nextReviewDate);
     const groupedUpcomingProblems = problems
       .filter((problem) => problem.nextReviewDate > now)
       .reduce((acc, problem) => {
