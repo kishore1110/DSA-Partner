@@ -196,7 +196,7 @@
   
   .submit-feedback-button {
     padding: 10px 16px;
-    background-color: #7c3aed !important;
+    background-color: #FFB700 !important;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -239,4 +239,51 @@
 
   .font-size-15 {
     font-size: 14px;
+  }
+
+  .message {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    border-width: 1px;
+  }
+  
+  .message.success {
+    background-color: #f0fff4;
+    border-color: #9ae6b4;
+  }
+  
+  .message.success p {
+    color: #2f855a;
+    font-size: 0.875rem;
+  }
+  
+  .message.error {
+    background-color: #fff5f5;
+    border-color: #feb2b2;
+  }
+  
+  .message.error p {
+    color: #c53030;
+    font-size: 0.875rem;
+  }
+
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .spinner {
+    animation: spin 1s linear infinite;
+    color: white;
+    font-size: 1.125rem;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }

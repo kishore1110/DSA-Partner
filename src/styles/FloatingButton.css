@@ -9,7 +9,7 @@
   .floating-button {
     width: 48px;
     height: 48px;
-    background-color: rgb(135, 106, 251);
+    background-color: #FFB700;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -22,7 +22,7 @@
   }
   
   .floating-button:hover {
-    background-color: rgba(135, 106, 251, 0.9)
+    background-color: #edaa02;
   }
   
   .floating-panel {
@@ -41,7 +41,7 @@
   
   .panel-header {
     padding: 16px;
-    background-color: rgba(135, 106, 251, 0.1);
+    background-color: rgba(255, 183, 0, 0.05);
     color: rgb(2, 8, 23);
     display: flex;
     justify-content: space-between;
@@ -63,7 +63,7 @@
   }
   
   .active {
-    background-color: rgb(135, 106, 251);
+    background-color: #FFB700;
     color: white;
   }
   

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { X, Brain, List, BookOpen, User } from "lucide-react";
+import { X, List, User } from "lucide-react";
+import { FaHandshakeAngle } from "react-icons/fa6";
 import ProblemList from "./ProblemList";
 import AddProblemForm from "./AddProblemForm";
 import "../styles/FloatingButton.css";
@@ -19,17 +20,17 @@ const FloatingButton = () => {
       <button
         onClick={toggleOpen}
         className="floating-button"
-        aria-label="DSA Memoizer"
+        aria-label="DSA Partner"
       >
-        {isOpen ? <X size={24} /> : <Brain size={24} />}
+        {isOpen ? <X size={24} /> : <FaHandshakeAngle size={24} />}
       </button>
 
       {isOpen && (
         <div className="floating-panel">
           <div className="panel-header">
             <div className="flex-8">
-              <BookOpen color="rgb(135, 106, 251)" />
-              <h3>DSA Memoizer</h3>
+              <FaHandshakeAngle size={24} color="#FFB700" />
+              <h3>DSA Partner</h3>
             </div>
             <div className="button-group flex-8">
               <button
@@ -65,8 +66,8 @@ const FloatingButton = () => {
             )}
           </div>
 
-          <div className="panel-footer">
-            Practice makes perfect. Review problems in spaced intervals.
+          <div className="panel-footer text-center">
+            Practice makes perfect.
           </div>
         </div>
       )}

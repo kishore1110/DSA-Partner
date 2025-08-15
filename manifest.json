@@ -1,19 +1,19 @@
 {
     "manifest_version": 3,
-    "name": "DSA Memoizer",
-    "description": "A Chrome extension to track, review, and revisit DSA problems from LeetCode and GeeksforGeeks efficiently.",
+    "name": "DSA Partner",
+    "description": "A Chrome extension to track and review DSA problems from LeetCode and GeeksforGeeks efficiently.",
     "version": "1.0.5",
     "action": { "default_popup": "index.html" },
-    "content_scripts": [
+    "content_scripts": [ 
     {
       "js": ["src/content.jsx"],
       "matches": ["https://www.geeksforgeeks.org/*", "https://leetcode.com/*"]
     }
   ],
   "icons": {
-    "16": "brain_icon.png",
-    "48": "brain_icon.png",
-    "128": "brain_icon.png"
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
   },
   "permissions": ["storage"],
   "web_accessible_resources": [

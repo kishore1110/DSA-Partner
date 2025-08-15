@@ -1,5 +1,5 @@
-export const STORAGE_KEY = "dsa_memoizer_problems";
-export const REVIEW_DAYS_KEY = "dsa_memoizer_review_days";
+export const STORAGE_KEY = "dsa_partner_problems";
+export const REVIEW_DAYS_KEY = "dsa_partner_review_days";
 const REVIEW_INTERVAL_DAYS = 4;
 const MILLISECONDS_PER_DAY = 86400000;
 
