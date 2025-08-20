@@ -71,14 +71,18 @@ const ProfilePage = () => {
         const strValue = e.target.value.trim();
 
         setReviseDay(strValue);
-
-        const value = Number(strValue);
-        if (!strValue || isNaN(value) || value < 1 || value > 30) {
-            console.log('Invalid input: value must be a number between 1 and 30.');
+        
+        if(!strValue){
             return;
         }
-
-        await updateReviseDays(value); 
+        
+        if (strValue < 1 || strValue > 30) {
+            alert('Invalid input: value must be a number between 1 and 30.');
+            return;
+        }
+        
+        
+        await updateReviseDays(strValue); 
     };
 
 
@@ -117,19 +121,6 @@ const ProfilePage = () => {
                             <button
                                 className="social-link"
                                 onClick={() =>
-                                    window.open("https://github.com/kishore1110", "_blank")
-                                }
-                            >
-                                <img
-                                    src="https://github.githubassets.com/favicons/favicon.svg"
-                                    alt="Linkedin icon"
-                                    width={24}
-                                    height={24}
-                                />
-                            </button>
-                            <button
-                                className="social-link"
-                                onClick={() =>
                                     window.open(
                                         "https://www.linkedin.com/in/kishore1110/",
                                         "_blank"
@@ -139,6 +130,19 @@ const ProfilePage = () => {
                                 <img
                                     src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kNS0xMF8xLnBuZw.png"
                                     alt="Linkedin icon"
+                                    width={24}
+                                    height={24}
+                                />
+                            </button>
+                            <button
+                                className="social-link"
+                                onClick={() =>
+                                    window.open("https://github.com/kishore1110", "_blank")
+                                }
+                            >
+                                <img
+                                    src="https://github.githubassets.com/favicons/favicon.svg"
+                                    alt="Github icon"
                                     width={24}
                                     height={24}
                                 />
@@ -192,7 +196,7 @@ const ProfilePage = () => {
                         <input
                             id="reviseDay"
                             name="reviseDay"
-                            type="text"
+                            type="number"
                             className="form-input"
                             value={reviseDay}
                             onChange={handleReviseDayChange}
